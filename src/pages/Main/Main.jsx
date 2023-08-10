@@ -1,16 +1,11 @@
-import AppRoutes from "./AppRoutes/AppRoutes";
+import { useState, useEffect } from "react";
+import style from "./Main.module.css";
+import MainNav from "../../components/MainNav/MainNav";
+import MainCenterBlock from "../../components/MainCenterBlock/MainCenterBlock";
+import MainSidebar from "../../components/MainSidebar/MainSidebar";
+import MainBar from "../../components/MainBar/MainBar";
 
-function App() {
-  return (
-    <AppRoutes />
-import { useEffect, useState } from "react";
-import style from "./App.module.css";
-import MainNav from "./MainNav/MainNav";
-import MainCenterBlock from "./MainCenterBlock/MainCenterBlock";
-import MainSidebar from "./MainSidebar/MainSidebar";
-import MainBar from "./MainBar/MainBar";
-
-function App() {
+function Main() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -31,4 +26,4 @@ function App() {
   );
 }
 
-export default App;
+export default Main;

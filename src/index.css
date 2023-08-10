@@ -7,6 +7,10 @@
   font-display: swap;
 }
 
+
+.trackPlay__likeSvg,
+._btn-icon:active,
+.trackPlay__dislikeSvg {
 ._btn-icon:active, .trackPlay__likeSvg,
 ._btn-icon:active, .trackPlay__dislikeSvg {
   fill: #696969;
@@ -52,6 +56,29 @@ html, body {
   color: #ffffff;
 }
 
+}
+
+._btn-text:hover {
+  border-color: #d9b6ff;
+  color: #d9b6ff;
+  cursor: pointer;
+}
+
+#root {
+  width: 100%;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: #383838;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'StratosSkyeng', sans-serif;
+  color: #ffffff;
+}
+
+
 ul li {
   list-style: none;
 }
@@ -73,6 +100,7 @@ a {
 *:before, *:after {
   box-sizing: border-box;
 }
+
 
 * {
   margin: 0;

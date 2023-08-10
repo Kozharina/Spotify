@@ -19,6 +19,9 @@ function SidebarBlock({ loading }) {
           <SidebarItem select="1" playList={playListOne} />
           <SidebarItem select="2" playList={playListTwo} />
           <SidebarItem select="3" playList={playListThree} />
+          <SidebarItem playList={playListOne} />
+          <SidebarItem playList={playListTwo} />
+          <SidebarItem playList={playListThree} />
         </div>
       )}
     </div>

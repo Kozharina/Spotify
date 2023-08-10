@@ -1,3 +1,4 @@
+
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Link } from "react-router-dom";
 import style from "./navMenu.module.css";
@@ -20,6 +21,19 @@ function NavMenu() {
           <Link to="/" className={style.menu__link}>
             Выйти
           </Link>
+          <a href="index.html" className={style.menu__link}>
+            Главное
+          </a>
+        </li>
+        <li className={style.menu__item}>
+          <a href="index.html" className={style.menu__link}>
+            Мой плейлист
+          </a>
+        </li>
+        <li className={style.menu__item}>
+          <a href="index.html" className={style.menu__link}>
+            Войти
+          </a>
         </li>
       </ul>
     </div>

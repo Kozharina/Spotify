@@ -1,33 +1,36 @@
-import AppRoutes from "./AppRoutes/AppRoutes";
-
-function App() {
-  return (
-    <AppRoutes />
 import { useEffect, useState } from "react";
-import style from "./App.module.css";
-import MainNav from "./MainNav/MainNav";
-import MainCenterBlock from "./MainCenterBlock/MainCenterBlock";
-import MainSidebar from "./MainSidebar/MainSidebar";
-import MainBar from "./MainBar/MainBar";
+import AppRoutes from "./AppRoutes/AppRoutes";
+import getTrackAll from "../api/Api";
 
 function App() {
+  const [token, setToken] = useState(false);
+  const [allTrack, setAllTrack] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [getError, setGetError] = useState(null);
+
+  const asyncGetTrackAll = async () => {
+    try {
+      const response = await getTrackAll();
+      setAllTrack(response);
+    } catch (error) {
+      setGetError(error.message);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   useEffect(() => {
-    setTimeout(() => setLoading(false), 3000);
-  }, [loading]);
+    asyncGetTrackAll();
+  }, []);
 
   return (
-    <div className={style.container}>
-      <main className={style.main}>
-        <MainNav />
-        <MainCenterBlock loading={loading} />
-        <MainSidebar loading={loading} />
-      </main>
-      <div className={style.bar}>
-        <MainBar loading={loading} />
-      </div>
-    </div>
+    <AppRoutes
+      token={token}
+      setToken={setToken}
+      allTrack={allTrack}
+      loading={loading}
+      getError={getError}
+    />
   );
 }
 

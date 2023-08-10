@@ -1,9 +1,11 @@
-
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Link } from "react-router-dom";
 import style from "./navMenu.module.css";
 
-function NavMenu() {
+function NavMenu({ setToken }) {
+  const toggleToken = () => {
+    setToken(false);
+  };
+
   return (
     <div className={style.nav__menu}>
       <ul className={style.menu__list}>
@@ -18,22 +20,14 @@ function NavMenu() {
           </Link>
         </li>
         <li className={style.menu__item}>
-          <Link to="/" className={style.menu__link}>
+          <button
+            type="button"
+            onClick={toggleToken}
+            to="/"
+            className={style.menu__link}
+          >
             Выйти
-          </Link>
-          <a href="index.html" className={style.menu__link}>
-            Главное
-          </a>
-        </li>
-        <li className={style.menu__item}>
-          <a href="index.html" className={style.menu__link}>
-            Мой плейлист
-          </a>
-        </li>
-        <li className={style.menu__item}>
-          <a href="index.html" className={style.menu__link}>
-            Войти
-          </a>
+          </button>
         </li>
       </ul>
     </div>

@@ -1,4 +1,3 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { useNavigate } from "react-router-dom";
 import style from "./Favorites.module.css";
 
@@ -10,11 +9,11 @@ function Favorites() {
   };
 
   return (
-    <div className={style.login}>
-      <h1 className={style.login__header}>Favorites PAGE</h1>
+    <div className={style.favorites}>
+      <h1 className={style.favorites__header}>Favorites PAGE</h1>
       <button
         onClick={mainButton}
-        className={style.login__button}
+        className={style.favorites__button}
         type="button"
       >
         На Main страницу
